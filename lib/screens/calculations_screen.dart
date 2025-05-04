@@ -39,7 +39,7 @@ class _CalculationsScreenState extends State<CalculationsScreen> {
       _comfortLevel = comfort;
     });
     _saveHistory(
-        'Temp: $temperature°C ($fahrenheit°F), Humidity: $humidity%, Comfort: $comfort');
+        'Температура: $temperature°C ($fahrenheit°F), Влажность: $humidity%, Комфорт: $comfort');
   }
 
   Future<void> _loadHistory() async {
@@ -93,11 +93,11 @@ class _CalculationsScreenState extends State<CalculationsScreen> {
                   _calculateAndSaveComfort(temp, humidity);
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Please enter valid numbers')),
+                    SnackBar(content: Text('Принимаем числа')),
                   );
                 }
               },
-              child: Text('Calculate'),
+              child: Text('Вычислить'),
             ),
             SizedBox(height: 16),
             Text('Комфортность: $_comfortLevel', style: TextStyle(fontSize: 20)),
